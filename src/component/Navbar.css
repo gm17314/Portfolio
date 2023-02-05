@@ -8,15 +8,20 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1;
+  
 }
 .logo {
-  width: 25%;
-  height: 100%;
+  width: 20%;
+  height: 105%;
   font-size: 4rem;
   display: flex;
+  justify-content: center;
   padding-left: 1.5rem;
   align-items: center;
   color: aliceblue;
+  z-index: 6;
+  background-color: black;
+  /* border: 1px solid red; */
 }
 .hamburger {
   width: 10%;
@@ -37,6 +42,9 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-shadow: .2rem .1rem .2rem .1rem rgb(71, 69, 69);
+  z-index: 5;
+  
 }
 li {
   cursor: pointer;
@@ -68,7 +76,8 @@ a {
     position: relative;
   }
   .logo {
-    width: 40%;
+    padding-top: 1rem;
+    width: 14%;
   }
   .nav-menu {
     position: absolute;
@@ -78,7 +87,7 @@ a {
     top: 7rem;
     left: -105%;
     /* border-top: 1px solid grey; */
-    box-shadow: 0 -1rem 0.3rem 0.1rem rgb(61, 60, 60);
+    box-shadow: 0 -.3rem 0.3rem 0.1rem rgb(61, 60, 60);
     background-color: rgba(0, 0, 0, 0.959);
     transition: all 1s;
   }

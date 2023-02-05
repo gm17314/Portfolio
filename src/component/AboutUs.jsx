@@ -7,14 +7,14 @@ position: relative;
   justify-content: center;
   width: 100%;
   height: 70rem;
-  background-color: #000000fb;
+  background-image: linear-gradient(#0e0d0df8,rgba(14, 12, 12, 0.973));
   box-shadow: 0 0 3rem .1rem #161515f8;
   @media (max-width:620px){
    height:100rem; 
   }
 `
 const Main = styled.div`
-    width:83%;
+    width:88%;
     height:90%;
 `
 const Container = styled(Flex)`
@@ -81,11 +81,10 @@ const Div = styled.div`
 `
 const Para = styled.p`
   width: 100%;
-  color: #dbf7d7;
-  font-weight: bold;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #e4f1e2;
+  font-family:${font1};
   font-size: 2.2rem;
-  line-height: 2.5rem;
+  line-height: 2.65rem;
   margin-top:1rem;
   
 
@@ -96,21 +95,21 @@ const AboutUs = () => {
   return (
     <About id='about'>
       <Main>
-        <Container data-aos='zoom-in'>
+        <Container>
           <Left>
             <H3>Who <span style={{ color: green }}>I'm</span></H3><br />
             <H4>I'm a student and I'm pursuing Btech in CSE with specialization in AI and ML at <span style={{ color: green }}>Noida Institute Of Engineering and Technology (NIET)</span> </H4><br />
             <H5>I use ReactJs as well as Firebase for <span style={{ color: green }}>Web Development</span></H5>
           </Left>
-          <Image src='https://images.collegedunia.com/public/college_data/images/campusimage/1415611200n5.jpg' />
+          <Image data-aos='fade-in-right' src='https://images.collegedunia.com/public/college_data/images/campusimage/1415611200n5.jpg' />
         </Container>
-        <Bio data-aos='zoom-in'>
-          <Dp src='https://images.collegedunia.com/public/college_data/images/campusimage/1415611200n5.jpg' />
+        <Bio>
+          <Dp data-aos='fade-in-out' src='https://images.collegedunia.com/public/college_data/images/campusimage/1415611200n5.jpg' />
           <Div>
            <H3 className='aboutme'>About <span style={{ color: green }}>Me</span></H3>
-            <Para><i>I've strong interest in Web Development.I am proficient in front-end development and continually strive to learn about new technologies. I have experience using various technologies such as ReactJs, React Redux,Google Firebase, among others, and have a wealth of experience creating projects with them. Along with development, I've good command in Data Structure with Python.
+            <Para>I've strong interest in Web Development.I am proficient in front-end development and continually strive to learn about new technologies. I have experience using various technologies such as ReactJs, React Redux,Google Firebase, among others, and have a wealth of experience creating projects with them. Along with development, I've good command in Data Structure with Python.
               <br />
-              Furthermore, I work as a Subject Matter Expert for Chegg India, where I have assisted many students and developers by answering their questions.My diverse skills and expertise make me an asset to any team, and I am eager to continue growing and developing as a developer.</i> </Para>
+              Furthermore, I work as a Subject Matter Expert for Chegg India, where I have assisted many students and developers by answering their questions.My diverse skills and expertise make me an asset to any team, and I am eager to continue growing and developing as a developer.</Para>
           </Div>
         </Bio>
       </Main>

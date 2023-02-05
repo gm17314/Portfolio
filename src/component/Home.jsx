@@ -2,30 +2,48 @@ import React from "react";
 import styled from "styled-components";
 import { Flex, font1, font2, font3, green } from "./Common";
 import { BsLinkedin, BsInstagram, BsGithub } from "react-icons/bs";
-import coding from '../Image/coding.png'
+import coding from "../Image/coding.png";
+import resume from "../Image/GauravMaurya_InternshalaResume.pdf";
 
 const HomePage = styled.section`
   width: 100%;
   height: 58rem;
   background-color: #000000f6;
   display: flex;
-  @media (max-width:620px){
+  position: relative;
+  @media (max-width: 620px) {
     height: 85rem;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
   }
 `;
+const Dabba = styled.div`
+  position: absolute;
+  width: 50rem;
+  height: 50rem;
+  /* border:1px solid ${green}; */
+  /* box-shadow: ; */
+  border-radius: 50%;
+  left: 15%;
+  top: 6%;
+  background: radial-gradient(
+    circle,
+    rgba(2, 150, 76, 0.719) 5%,
+    #00000011 38%
+  );
+`;
 const Left = styled.div`
   width: 55%;
   padding: 10rem;
-  padding-right: 1rem;
+  padding-left: 4rem;
+  /* padding-right: 1rem; */
   /* border:1px solid red; */
-  @media (max-width:620px){
+  @media (max-width: 620px) {
     width: 90%;
     padding: 3rem;
     padding-top: 1rem;
-  /* padding-right: 1rem; */
+    /* padding-right: 1rem; */
   }
 `;
 const H3 = styled.h3`
@@ -48,68 +66,109 @@ const Bio = styled.p`
   font-family: ${font3};
   font-size: 1.85rem;
 `;
-const Button = styled.button`
+const Button = styled.a`
   color: white;
   background-color: ${green};
-  border-radius: 1rem;
+  border-radius: .3rem;
   font-family: ${font2};
   font-size: 2rem;
   padding: 0.8rem 1.7rem;
   cursor: pointer;
-  transition: all 0.3s;
-  &:hover {
-    background-color: rgba(5, 143, 97, 0.767);
-    transform: scale(1.03);
+  transition: all 0.5s;
+  position:relative;
+  z-index:5;
+  &::after{
+    position: absolute;
+    border-radius:inherit;
+    transition:all .2s;
+    z-index:-1;
+    content:"";
+    width:100%;
+    height:0%;
+    top:0%;
+    left:0;
+    background-color: rgba(130, 223, 192, 0.767);
+  }
+  &:hover::after{
+    z-index:-1;
+    height:100%;
+     /* transform: scale(1.03); */
+  }
+  &:hover{
+    color:black;
+    z-index:5;
   }
   &:active {
-    transform: scale(.9);
+    transform: scale(0.9);
   }
 `;
 const Follow = styled(Flex)`
-  width: 50%;
+  width: 25%;
   align-items: flex-start;
   justify-content: space-between;
   color: white;
   font-family: ${font3};
   font-size: 1.7rem;
-  @media (max-width:620px){
-    width: 65%;
-    /* margin: auto; */
-    justify-content: space-around;
+  @media (max-width: 920px) {
+    width: 35%;
+  }
+  @media (max-width: 620px) {
+    width: 35%;
   }
 `;
-const Span = styled.span`
+/* const Span = styled.span`
   color: white;
   font-family: ${font2};
   font-size: 2.6rem;
-`;
+`; */
 const Anchor = styled.a`
   color: ${green};
   font-size: 3rem;
+  &.linkdn {
+    animation: floating 2.8s ease-in 1ms infinite reverse;
+  }
+  &.ig {
+    animation: floating 3s ease-in-out 1ms infinite reverse;
+  }
+  &.git {
+    animation: floating 3.2s ease-in 1ms infinite reverse;
+  }
+  @keyframes floating {
+    0% {
+      transform: translateY(1rem);
+    }
+    50% {
+      transform: translateY(-1rem);
+    }
+    100% {
+      transform: translateY(1rem);
+    }
+  }
 `;
 const Right = styled(Flex)`
   justify-content: center;
-  width:45%;
+  width: 45%;
   /* border: 1px solid green; */
-  @media (max-width:620px){
+  @media (max-width: 620px) {
     width: 100%;
-    height:48%;
+    height: 48%;
   }
 `;
 const Image = styled.img`
   width: 95%;
   height: 100%;
-  @media (max-width:620px){
+  @media (max-width: 620px) {
     width: 60%;
-    height:100%;
+    height: 100%;
     /* border:1px solid  red; */
   }
-`
+`;
 
 const Home = () => {
   return (
     <HomePage id="home">
-      <Left data-aos='zoom-in-up'>
+      <Dabba></Dabba>
+      <Left data-aos="zoom-in-up">
         <H3>
           Hello, <span style={{ color: green }}>I'm</span>
         </H3>
@@ -126,29 +185,35 @@ const Home = () => {
           harum non.
         </Bio>
         <br />
-        <Button>Hire Me</Button>
-        <br /><br /><br />
+        <Button href={resume} attributes-list>Hire Me</Button>
+        <br />
+        <br />
+        <br />
         <Follow>
-        <Span>Follow me on </Span>
           <Anchor
+            className="linkdn"
             target="_blank"
             href="https://www.linkedin.com/in/gaurav-maurya-49b6a9229/"
           >
             <BsLinkedin />
           </Anchor>
           <Anchor
+            className="ig"
             target="_blank"
             href="https://www.instagram.com/gaurav_as_gm/"
           >
             <BsInstagram />
           </Anchor>
-          <Anchor target="_blank" href="https://github.com/gm17314">
+          <Anchor
+            className="git"
+            target="_blank"
+            href="https://github.com/gm17314"
+          >
             <BsGithub />
           </Anchor>
         </Follow>
-
       </Left>
-      <Right data-aos='zoom-in-up'>
+      <Right data-aos="zoom-in-up">
         <Image src={coding} />
       </Right>
     </HomePage>

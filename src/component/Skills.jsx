@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useInView } from 'react-hook-inview'
 import { Flex, font1, font2,green } from './Common';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { FaCss3Alt,FaReact } from 'react-icons/fa';
@@ -66,13 +67,14 @@ const Bar1 = styled.div`
         content:"";
         position: absolute;
         left:0;
-        width:80%;
+        transition:all .5s;
+        width:${(props)=>props.widthh};
         height: 100%;
         background-color:#ff5e00;
         border-radius: inherit;
     }
     &::after{
-        content: "80%";
+        content:"${(props)=>props.widthh}";
         position: absolute;
         color:#ff5e00;
         font-family:${font2};
@@ -96,13 +98,14 @@ const Bar2 = styled.div`
         content:"";
         position: absolute;
         left:0;
-        width:70%;
+        transition:all .5s;
+        width:${(props)=>props.widthh};
         height: 100%;
         background-color:#0b08bb;
         border-radius: inherit;
     }
     &::after{
-        content: "70%";
+        content:"${(props)=>props.widthh}";
         position: absolute;
         color:#0b08bb;
         font-family:${font2};
@@ -116,7 +119,7 @@ const Bar2 = styled.div`
 `;
 const Bar3 = styled.div`
     margin:1rem;
-    width:60%;
+    width:80%;
     height:1.3rem;
     background-color: #0f0605;
     border-radius:2rem;
@@ -125,13 +128,14 @@ const Bar3 = styled.div`
         content:"";
         position: absolute;
         left:0;
-        width:60%;
+        transition:all .5s;
+        width:${(props)=>props.widthh};
         height: 100%;
         background-color:#ffee06;
         border-radius: inherit;
     }
     &::after{
-        content: "60%";
+        content:"${(props)=>props.widthh}";
         position: absolute;
         color:#ffee06;
         font-family:${font2};
@@ -145,7 +149,7 @@ const Bar3 = styled.div`
 `;
 const Bar4 = styled.div`
     margin:1rem;
-    width:70%;
+    width:80%;
     height:1.3rem;
     background-color: #0f0605;
     border-radius:2rem;
@@ -154,13 +158,14 @@ const Bar4 = styled.div`
         content:"";
         position: absolute;
         left:0;
-        width:75%;
+        transition:all .5s;
+        width:${(props)=>props.widthh};
         height: 100%;
         background-color:#15edf5;
         border-radius: inherit;
     }
     &::after{
-        content: "75%";
+        content:"${(props)=>props.widthh}";
         position: absolute;
         color:#15edf5;
         font-family:${font2};
@@ -174,7 +179,7 @@ const Bar4 = styled.div`
 `;
 const Bar5 = styled.div`
     margin:1rem;
-    width:55%;
+    width:80%;
     height:1.3rem;
     background-color: #0f0605;
     border-radius:2rem;
@@ -183,13 +188,14 @@ const Bar5 = styled.div`
         content:"";
         position: absolute;
         left:0;
-        width:60%;
+        transition:all .5s;
+        width:${(props)=>props.widthh};
         height: 100%;
         background-color:orange;
         border-radius: inherit;
     }
     &::after{
-        content: "60%";
+        content:"${(props)=>props.widthh}";
         position: absolute;
         color:orange;
         font-family:${font2};
@@ -203,7 +209,7 @@ const Bar5 = styled.div`
 `;
 const Bar6 = styled.div`
     margin:1rem;
-    width:75%;
+    width:80%;
     height:1.3rem;
     background-color: #0f0605;
     border-radius:2rem;
@@ -212,13 +218,14 @@ const Bar6 = styled.div`
         content:"";
         position: absolute;
         left:0;
-        width:80%;
+        transition:all .5s;
+        width:${(props)=>props.widthh};
         height: 100%;
         background-color:#0a72ad;
         border-radius: inherit;
     }
     &::after{
-        content: "80%";
+        content:"${(props)=>props.widthh}";
         position: absolute;
         color:#0a72ad;
         font-family:${font2};
@@ -232,39 +239,46 @@ const Bar6 = styled.div`
 `;
 
 const Skills = () => {
+    const [ref, isVisible] = useInView({
+        threshold: 1,
+      })
+      const [reff, issVisible] = useInView({
+        threshold: 1,
+      })
+
   return (
     <Skill id="skill">
       <H2>My Skills</H2>
       <Cardbox>
-        <Card data-aos='zoom-in' data-aos-delay='300'>
+        <Card>
             <Image style={{color:'#ff5e00'}}><AiFillHtml5/></Image>
             <H3>HTML</H3>
-            <Bar1></Bar1>
+            <Bar1 ref={ref} widthh={isVisible?"80%":"0%"}></Bar1>
         </Card>
-        <Card  data-aos='zoom-in' data-aos-delay='300'>
+        <Card>
             <Image style={{color:'#0b08bb'}}><FaCss3Alt/></Image>
             <H3>CSS</H3>
-            <Bar2></Bar2>
+            <Bar2 ref={ref} widthh={isVisible?"70%":"0%"}></Bar2>
         </Card>
-        <Card  data-aos='zoom-in' data-aos-delay='300'>
+        <Card >
             <Image style={{color:'#ffee06'}}><SiJavascript/></Image>
             <H3>JAVASCRIPT</H3>
-            <Bar3></Bar3>
+            <Bar3 ref={ref} widthh={isVisible?"60%":"0%"}></Bar3>
         </Card>
-        <Card  data-aos='zoom-in' data-aos-delay='300'>
+        <Card >
             <Image style={{color:'#15edf5'}}><FaReact/></Image>
             <H3>REACT JS</H3>
-            <Bar4></Bar4>
+            <Bar4 ref={reff}  widthh={issVisible?"75%":"0%"}></Bar4>
         </Card>
-        <Card  data-aos='zoom-in' data-aos-delay='300'>
-            <Image style={{color:'orange'}}><DiFirebase/></Image>
+        <Card >
+            <Image ref={reff} style={{color:'orange'}}><DiFirebase/></Image>
             <H3>FIREBASE</H3>
-            <Bar5></Bar5>
+            <Bar5  widthh={issVisible?"60%":"0%"}></Bar5>
         </Card>
-        <Card  data-aos='zoom-in' data-aos-delay='300'>
-            <Image style={{color:'#0a72ad'}}><TbBrandPython/></Image>
+        <Card >
+            <Image ref={reff} style={{color:'#0a72ad'}}><TbBrandPython/></Image>
             <H3>PYTHON</H3>
-            <Bar6></Bar6>
+            <Bar6  widthh={issVisible?"80%":"0%"}></Bar6>
         </Card>
       </Cardbox>
     </Skill>
