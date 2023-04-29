@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Flex, font1, font3, green } from './Common'
+import dp from '../Image/dp.jpeg'
 
 const About = styled(Flex)`
 position: relative;
@@ -10,13 +11,15 @@ position: relative;
   background-image: linear-gradient(#0e0d0df8,rgba(14, 12, 12, 0.973));
   box-shadow: 0 0 3rem .1rem #161515f8;
   @media (max-width:620px){
-   height:100rem; 
+   height:110rem; 
   }
 `
+
 const Main = styled.div`
     width:88%;
     height:90%;
 `
+
 const Container = styled(Flex)`
     width: 100%;
     justify-content: space-between;
@@ -65,12 +68,11 @@ const Bio = styled(Flex)`
 const Dp = styled.img`
     width: 24rem;
     height: 24rem;
-    border-radius:40%;
+    border-radius:50%;
     margin-top: 2rem;
-    /* box-shadow: 0 0 1rem .3rem #234b2e6c; */
+    box-shadow: 0 0 1rem .3rem #01681e6c;
     @media (max-width:620px){
       margin:0;
-      border-radius:45%;
     }
 `
 const Div = styled.div`
@@ -86,7 +88,13 @@ const Para = styled.p`
   font-size: 2.2rem;
   line-height: 2.65rem;
   margin-top:1rem;
-  
+  @media (max-width:620px){
+     text-align: center;
+     width: 85%;
+     margin:auto;
+     line-height: 3rem;
+     margin-top:1rem;
+    }
 
 `;
 
@@ -104,7 +112,7 @@ const AboutUs = () => {
           <Image data-aos='fade-in-right' src='https://images.collegedunia.com/public/college_data/images/campusimage/1415611200n5.jpg' />
         </Container>
         <Bio>
-          <Dp data-aos='fade-in-out' src='https://images.collegedunia.com/public/college_data/images/campusimage/1415611200n5.jpg' />
+          <Dp data-aos='fade-in-out' src={dp} />
           <Div>
            <H3 className='aboutme'>About <span style={{ color: green }}>Me</span></H3>
             <Para>I've strong interest in Web Development.I am proficient in front-end development and continually strive to learn about new technologies. I have experience using various technologies such as ReactJs, React Redux,Google Firebase, among others, and have a wealth of experience creating projects with them. Along with development, I've good command in Data Structure with Python.

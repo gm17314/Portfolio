@@ -5,7 +5,7 @@ import { Flex,} from './Common'
 
 const Load = styled(Flex)`
     width:100%;
-    height:100vh;
+    height:125vh;
     justify-content: center;
     background-color: #131212;
 `
@@ -28,7 +28,7 @@ const Span = styled.span`
 const Loading = () => {
     const [percent,setPercent] = useState(0);
     const increment=()=>{
-        setPercent(percent+.5)
+        setPercent(percent+.7)
     }
       useEffect(()=>{
         increment()
@@ -37,8 +37,7 @@ const Loading = () => {
   return (
     <Load>
         <Div>
-        <Circle percent={percent} strokeWidth={5} strokeColor="#50b850"trailWidth={5} trailColor="#9ac79a">
-        </Circle>
+        <Circle percent={percent} strokeWidth={5} strokeColor="#50b850" trailWidth={5} trailColor="#9ac79a" />
         <Span>GM</Span>
         </Div>
     </Load>

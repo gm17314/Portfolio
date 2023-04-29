@@ -9,17 +9,21 @@ import { green } from './Common';
 // import logo from '../Image/logo.PNG'
 
 const Div = styled.div`
-    width:7.3rem;
-    height:7.3rem;
+    width:6rem;
+    height:6rem;
     position: absolute;
     top:10%;
     left: 3.5%;
-
+    @media (max-width:620px){
+        width:6rem;
+        height:6rem;
+    }
 `
+
 const Span = styled.span`
     font-family: "Gabriela";
     color: #1ce480;
-    font-size: 3.2rem;
+    font-size: 2.7rem;
     font-weight: bold;
     position: absolute;
     left: 14%;
@@ -27,8 +31,12 @@ const Span = styled.span`
     border-radius: 50%;
     background-color: #027a02;
     box-shadow: 0 0 5rem 2rem ${green};
-   
+    @media (max-width:620px){
+        font-size: 2.7rem;
+        top: 19%;
+    }
 `
+
 const Navbar = () => {
     const [open, setOpen] = useState(false);
 

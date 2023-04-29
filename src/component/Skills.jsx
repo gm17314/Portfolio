@@ -18,8 +18,8 @@ const Skill = styled.section`
         height:88rem;
 }
 `
+
 const H2 = styled.h2`
-  color: white;
   font-family: ${font1};
   font-size: 3.5rem;
   text-align: center;
@@ -28,6 +28,7 @@ const H2 = styled.h2`
   margin-bottom: 4rem;
   /* font-variant: small-caps; */
 `;
+
 const Cardbox = styled.div`
     display: grid;
     grid-template-columns: auto auto auto;

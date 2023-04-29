@@ -17,6 +17,9 @@ const Main = styled(Flex)`
    justify-content:flex-end;
   }
 `
+const Div = styled.div`
+  background-color: #000000f9;
+`
 const Left = styled(Flex)`
     width:50%;
     height:100%;
@@ -36,6 +39,16 @@ const Right = styled.form`
       width:83%;
   }
 `
+const Heading = styled.h2`
+  font-family: ${font1};
+  font-size: 3.5rem;
+  text-align: center;
+  color:${green};
+  background-color: #000000f9;
+  padding-top: 4rem;
+  /* font-variant: small-caps; */
+`;
+
 const Label = styled.label`
   color: ${green};
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -102,9 +115,10 @@ const Contact = () => {
   }
    
   return (
+    <Div>
+      <Heading>Feel Free To Connect🙏</Heading>
     <Main id="contact">
         <Left><Image src={contactus} alt=''/></Left>
-
         <Right onSubmit={handleData}>
         <Label>Name :</Label><br />
             <Input type="text" /><br /><br /><br />
@@ -117,8 +131,8 @@ const Contact = () => {
             <Button>Send</Button>
         </Right>
         <Arrow onClick={()=>(window.scrollTo(0,0))}><BsArrowUpCircleFill/></Arrow>
-        
     </Main>
+    </Div>
   )
 }
 

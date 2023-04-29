@@ -12,40 +12,45 @@ const HomePage = styled.section`
   display: flex;
   position: relative;
   @media (max-width: 620px) {
-    height: 85rem;
+    height: 90rem;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
   }
 `;
+
 const Dabba = styled.div`
   position: absolute;
   width: 50rem;
   height: 50rem;
-  /* border:1px solid ${green}; */
-  /* box-shadow: ; */
   border-radius: 50%;
   left: 15%;
   top: 6%;
+  @media (max-width:620px){
+    left: 26%;
+    top:8%;
+  }
   background: radial-gradient(
     circle,
     rgba(2, 150, 76, 0.719) 5%,
     #00000011 38%
   );
+  
 `;
+
 const Left = styled.div`
   width: 55%;
   padding: 10rem;
   padding-left: 4rem;
-  /* padding-right: 1rem; */
-  /* border:1px solid red; */
   @media (max-width: 620px) {
     width: 90%;
-    padding: 3rem;
-    padding-top: 1rem;
-    /* padding-right: 1rem; */
+    padding:0;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
   }
 `;
+
 const H3 = styled.h3`
   color: white;
   font-family: ${font1};
@@ -56,15 +61,20 @@ const H2 = styled.h2`
   font-family: ${font1};
   font-size: 3.5rem;
 `;
-const H4 = styled.h4`
-  color: white;
-  font-family: ${font1};
-  font-size: 1.8rem;
-`;
 const Bio = styled.p`
   color: white;
   font-family: ${font3};
-  font-size: 1.85rem;
+  font-size: 2.3rem;
+  font-weight:bold;
+  @media (max-width:620px){
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    & .sme{
+      position: absolute;
+      top:50%;
+    }
+  }
 `;
 const Button = styled.a`
   color: white;
@@ -103,7 +113,7 @@ const Button = styled.a`
   }
 `;
 const Follow = styled(Flex)`
-  width: 25%;
+  width: 30%;
   align-items: flex-start;
   justify-content: space-between;
   color: white;
@@ -112,9 +122,7 @@ const Follow = styled(Flex)`
   @media (max-width: 920px) {
     width: 35%;
   }
-  @media (max-width: 620px) {
-    width: 35%;
-  }
+
 `;
 /* const Span = styled.span`
   color: white;
@@ -151,14 +159,14 @@ const Right = styled(Flex)`
   /* border: 1px solid green; */
   @media (max-width: 620px) {
     width: 100%;
-    height: 48%;
+    height: 53%;
   }
 `;
 const Image = styled.img`
   width: 95%;
   height: 100%;
   @media (max-width: 620px) {
-    width: 60%;
+    width: 65%;
     height: 100%;
     /* border:1px solid  red; */
   }
@@ -169,23 +177,21 @@ const Home = () => {
     <HomePage id="home">
       <Dabba></Dabba>
       <Left data-aos="zoom-in-up">
-        <H3>
-          Hello, <span style={{ color: green }}>I'm</span>
+        <H3 >
+          Hello, I'm
         </H3>
-        <br />
         <H2>GAURAV MAURYA</H2>
-        <H4>Frontend Developer and Python Programmer</H4>
         <br />
+        
         <Bio>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga est
-          placeat culpa maxime quisquam voluptate? Dolorum ratione
-          exercitationem ipsa, officiis cum illo quidem. Sapiente, magni! Lorem
-          ipsum dolor sit amet consectetur, adipisicing elit. Nam id, tenetur
-          exercitationem tempora maiores corporis itaque reprehenderit veniam
-          harum non.
+          Computer Science student at Niet Gr.Noida <br />
+          <b style={{color:green}}> & </b> <br />
+          <b className="sme">Subject Matter Expert at Chegg India </b>
         </Bio>
         <br />
-        <Button href={resume} attributes-list>Hire Me</Button>
+
+        <br />
+        <Button href={resume} target="_blank" attributes-list>Hire Me</Button>
         <br />
         <br />
         <br />
