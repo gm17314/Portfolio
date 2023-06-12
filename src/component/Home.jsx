@@ -184,7 +184,7 @@ const Home = () => {
         <br />
         
         <Bio>
-          Computer Science student at Niet Gr.Noida <br />
+          Computer Science Student at Niet Gr.Noida <br />
           <b style={{color:green}}> & </b> <br />
           <b className="sme">Subject Matter Expert at Chegg India </b>
         </Bio>

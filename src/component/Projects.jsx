@@ -32,6 +32,7 @@ const Main = styled(Flex)`
     width: 80%;
     @media (max-width:620px){
       flex-direction: column;
+      overflow: hidden;
   }
 `
 const Box = styled(Flex)`

@@ -106,7 +106,7 @@ const AboutUs = () => {
         <Container>
           <Left>
             <H3>Who <span style={{ color: green }}>I'm</span></H3><br />
-            <H4>I'm a student and I'm pursuing Btech in CSE with specialization in AI and ML at <span style={{ color: green }}>Noida Institute Of Engineering and Technology (NIET)</span> </H4><br />
+            <H4>I'm pursuing Btech in CSE with specialization in AI and ML at <span style={{ color: green }}>Noida Institute Of Engineering and Technology (2020-24)</span> </H4><br />
             <H5>I use ReactJs as well as Firebase for <span style={{ color: green }}>Web Development</span></H5>
           </Left>
           <Image data-aos='fade-in-right' src='https://images.collegedunia.com/public/college_data/images/campusimage/1415611200n5.jpg' />

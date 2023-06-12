@@ -68,8 +68,10 @@ const Input = styled.input`
 const Message = styled.textarea`
    font-size:2rem;
    font-family: ${font1};
-   width:80%;
-   height: 40%;
+   min-width:80%;
+   max-width: 80%;
+   min-height: 40%;
+   max-height: 40%;
    outline:0;
    color:white;
    padding:.4rem;
@@ -97,6 +99,9 @@ const Button = styled.button`
   transition:all .5s;
   &:hover{transform:scale(1.05);}
   &:active{transform:scale(.9);}
+  @media (max-width:620px){
+    margin: auto;
+  }
 
 `
 const Contact = () => {
