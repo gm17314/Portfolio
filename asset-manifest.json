@@ -1,22 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.6a2b3177.css",
-    "main.js": "/static/js/main.122c64c6.js",
+    "main.js": "/static/js/main.12bbc984.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/yourvdeos.PNG": "/static/media/yourvdeos.2372ee0228def253e86b.PNG",
     "static/media/coding.png": "/static/media/coding.d84f1d0e14138d892289.png",
     "static/media/contact.png": "/static/media/contact.91a64eccf37b89ee1568.png",
     "static/media/blogspedia.PNG": "/static/media/blogspedia.c7ed4b14445b5f750e3e.PNG",
-    "static/media/GauravMaurya_InternshalaResume.pdf": "/static/media/GauravMaurya_InternshalaResume.41ba2ee0f5ba19012e01.pdf",
     "static/media/connectbees.PNG": "/static/media/connectbees.54b8e2806d143fca3183.PNG",
     "static/media/labpartner.PNG": "/static/media/labpartner.0a93025740f1784a552d.PNG",
     "static/media/dp.jpeg": "/static/media/dp.a8ce2f65a8151d520610.jpeg",
+    "static/media/GauravMaurya_Resume.pdf": "/static/media/GauravMaurya_Resume.1ff040494c8966030fea.pdf",
     "index.html": "/index.html",
     "main.6a2b3177.css.map": "/static/css/main.6a2b3177.css.map",
-    "main.122c64c6.js.map": "/static/js/main.122c64c6.js.map",
+    "main.12bbc984.js.map": "/static/js/main.12bbc984.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6a2b3177.css",
-    "static/js/main.122c64c6.js"
+    "static/js/main.12bbc984.js"
   ]
 }
